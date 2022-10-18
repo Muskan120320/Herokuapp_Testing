@@ -21,7 +21,7 @@ Feature: Herokuapp Testing
   Scenario Outline: Check the functionality of Checkboxes
     Given user navigates to <Page Type> page
     When user clicks hyperlink Checkboxes
-    When user clicks on Checkbox1 button
+    Then user clicks on Checkbox1 button
     Examples:
       | Page Type  |
       | Internet  |
@@ -36,3 +36,20 @@ Feature: Herokuapp Testing
     Examples:
       | Page Type | User Name | Password | Successful Message |
       | Internet | admin    | admin    |                      |
+
+  Scenario Outline: Check the functionality of Dropdown
+    Given user navigates to <Page Type> page
+    When user clicks hyperlink Dropdown
+    And user clicks on dropdown button
+    Then user selects option <option1> in <dropdown>
+    Examples:
+      | Page Type  |
+      | Internet  |
+
+    Scenario Outline: Check the functionality of click here
+      Given user navigates to <Page Type> page
+      When user clicks hyperlink Dynamic Content
+      Then user clicks hyperlink click here
+      Examples:
+        | Page Type |
+        | Internet |
