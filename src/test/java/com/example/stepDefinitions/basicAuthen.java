@@ -10,10 +10,9 @@ public class basicAuthen {
     String password = "admin";
 
     @When("user enters (.*) and (.*) in the alert")
-
     public void enterValuesInAlert() {
-
-        String URL = "https://" + username + ":" + password + "@" + "the-internet.herokuapp.com/basic_auth";
+        String URL = "https://" +username +":" +password +"@"+ "the-internet.herokuapp.com/basic_auth";
         driver.get(URL);
+        throw new io.cucumber.java.PendingException();
     }
 }

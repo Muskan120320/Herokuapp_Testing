@@ -29,8 +29,8 @@ public class GenericHelpers {
         return selector;
     }
 
-    public static Select findSelectBox(WebElement element, String[] selectSelector) {
-        return (Select) element.findElement(By.cssSelector(selectSelector[1]));
+    public static WebElement findSelectBox(WebElement element, String[] selectSelector) {
+        return  element.findElement(By.cssSelector(selectSelector[1]));
     }
 
     static {

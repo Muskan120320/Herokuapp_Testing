@@ -88,7 +88,7 @@ public class KeyWordLibrary {
     @And("^user selects option (.*) in (.*)$")
     public void selectOption(String text, String locator) {
         String[] selectSelector = getLocatorFromDictionary(locator);
-        Select selectBox = findSelectBox(driver.findElement(By.xpath("/*")),selectSelector);
+        Select selectBox = new Select( findSelectBox(driver.findElement(By.xpath("/*")),selectSelector));
         selectBox.selectByVisibleText(text);
     }
 
@@ -96,5 +96,14 @@ public class KeyWordLibrary {
     @Then("user can view page")
     public void userCanViewPage() {
 
+    }
+
+    @Then("user can view all images")
+    public void userCanViewAllImages() {
+    }
+
+
+    @And("user can view ad")
+    public void userCanViewAd() {
     }
 }
