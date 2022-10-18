@@ -93,4 +93,8 @@ public class KeyWordLibrary {
     }
 
 
+    @Then("user can view page")
+    public void userCanViewPage() {
+
+    }
 }
