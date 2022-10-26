@@ -66,7 +66,7 @@ Feature: Heroku Testing
       |  Heroku   |  Hello World!      |
 
 
-  Scenario Outline: Check user is able to view images
+  Scenario Outline: Check the visibility of images
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink Broken Images
     Then user can view image links on the page
