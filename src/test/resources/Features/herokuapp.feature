@@ -1,4 +1,4 @@
-Feature: Herokuapp Testing
+Feature: Heroku Testing
 
   Scenario Outline: Check the functionality of A/B Testing
     Given user navigates to <Page Type> page
@@ -72,7 +72,7 @@ Feature: Herokuapp Testing
     Then user can view image links on the page
     Examples:
       | Page Type |
-      |  Heroku |
+      |  Heroku   |
 
 
     Scenario Outline: Check user can Retrieve Password
@@ -99,7 +99,7 @@ Feature: Herokuapp Testing
         Given user navigates to <Page Type> page
         When user clicks on the hyperlink Entry Ad
         And user can view add
-        And user clicks element close
+        And user clicks on element close
         Then user can view page
         Examples:
           | Page Type |
@@ -109,7 +109,7 @@ Feature: Herokuapp Testing
         Given user navigates to <Page Type> page
         When user clicks on the hyperlink Geolocation
         And user clicks on Where button
-        And user accepts alert pop up
+        And user accepts the alert pop up
         Then user can view <Location>
         Examples:
          | Page Type | Location|

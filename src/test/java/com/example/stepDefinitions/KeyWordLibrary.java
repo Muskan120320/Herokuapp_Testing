@@ -58,7 +58,7 @@ public class KeyWordLibrary {
     public static void clickByCssSelector(String s) {
         driver.findElement(By.cssSelector(s)).click();
     }
-    @When("^user clicks element (.*)$")
+    @When("^user clicks on element (.*)$")
     public void clickElement(String linkText) throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[contains(text(),login)]")));
@@ -92,7 +92,5 @@ public class KeyWordLibrary {
         Select selectBox = new Select( findSelectBox(driver.findElement(By.xpath("/*")),selectSelector));
         selectBox.selectByVisibleText(text);
     }
-
-
 
 }

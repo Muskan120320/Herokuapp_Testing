@@ -40,5 +40,5 @@ public class BrokenImages {
                 System.err.println(imageSrc);
             }
         }
-        driver.quit();
-}}
+    }
+}
