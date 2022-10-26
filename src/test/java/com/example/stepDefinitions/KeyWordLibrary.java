@@ -20,6 +20,7 @@ public class KeyWordLibrary {
     @Given("^user navigates to (.*) page$")
     public static  void open(String url) throws InterruptedException {
         String[] locator=getLocatorFromDictionary(url);
+        driver.manage().window().maximize();
         driver.navigate().to(locator[1]);
     }
 
@@ -50,7 +51,7 @@ public class KeyWordLibrary {
         driver.findElement(By.cssSelector("#" + cssSelector)).click();
     }
 
-    @When("^user clicks hyperlink (.*)$")
+    @When("^user clicks on the hyperlink (.*)$")
     public void clickHyperlink(String linkText) throws InterruptedException {
         driver.findElement(By.linkText(linkText)).click();
     }
@@ -60,8 +61,8 @@ public class KeyWordLibrary {
     @When("^user clicks element (.*)$")
     public void clickElement(String linkText) throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[contains(text(),'" + linkText + "')]")));
-        driver.findElement(By.xpath(".//*[contains(text(),'" + linkText + "')]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[contains(text(),login)]")));
+        driver.findElement(By.xpath(".//*[contains(text(), Login)]")).click();
     }
 
 
@@ -93,17 +94,5 @@ public class KeyWordLibrary {
     }
 
 
-    @Then("user can view page")
-    public void userCanViewPage() {
 
-    }
-
-    @Then("user can view all images")
-    public void userCanViewAllImages() {
-    }
-
-
-    @And("user can view ad")
-    public void userCanViewAd() {
-    }
 }

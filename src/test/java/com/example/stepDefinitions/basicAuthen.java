@@ -5,14 +5,14 @@ import static com.example.helpers.GenericHelpers.*;
 
 public class basicAuthen {
 
-    String username = "admin";
+//    String username = "admin";
+//
+//    String password = "admin";
 
-    String password = "admin";
-
-    @When("user enters (.*) and (.*) in the alert")
-    public void enterValuesInAlert() {
+    @When("^user enters (.*) and (.*) in the alert$")
+    public void enterValuesInAlert(String username, String password) {
         String URL = "https://" +username +":" +password +"@"+ "the-internet.herokuapp.com/basic_auth";
         driver.get(URL);
-        throw new io.cucumber.java.PendingException();
+
     }
 }
