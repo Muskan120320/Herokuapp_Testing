@@ -13,7 +13,9 @@ Feature: Heroku Testing
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink Add/Remove Elements
     And user clicks on Add  button
-    Then user can view Delete button
+    And user can view Delete
+    And user clicks on Delete button
+    Then user can view Add Element
     Examples:
       | Page Type  |
       |  Heroku    |
@@ -22,25 +24,25 @@ Feature: Heroku Testing
   Scenario Outline: Check the functionality of Checkboxes
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink Checkboxes
-    And user clicks on Checkbox1 button
-#    Then user can view selected checkbox
+    And user clicks on Checkbox 1 button
+    Then user can view selected Checkbox 1
     Examples:
       | Page Type  |
       |  Heroku  |
 
-  Scenario Outline: Check User is able to login
+  Scenario Outline: Check User is able to login     //TODO  //updated
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink Basic Auth
     And user enters <User Name> and <Password> in the alert
     Then user can view <Message>
     Examples:
-      | Page Type | User Name | Password |                  Message                                    |
-      |  Heroku | admin    | admin    |      Congratulations! You must have the proper credentials.    |
+      | Page Type | User Name | Password     |                  Message                                    |
+      |  Heroku |   name      | pass_word    |      Congratulations! You must have the proper credentials.    |
 
   Scenario Outline: Check the functionality of Dropdown
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink Dropdown
-    And user selects option Option 1 in  Dropdown
+    And user selects option Option 2 in  Dropdown
     Examples:
       | Page Type  |
       |   Heroku  |

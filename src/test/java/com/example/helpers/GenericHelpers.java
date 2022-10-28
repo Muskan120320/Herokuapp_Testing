@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Base64;
+
 import static com.example.helpers.ObjectRepo.*;
 
 public class GenericHelpers {
@@ -42,4 +44,9 @@ public class GenericHelpers {
         return element.findElement(By.cssSelector(elementSelector));
     }
 
+    public static String decodeTheEncryptedString (String decode) {
+        byte[] actualByte = Base64.getDecoder().decode(decode);
+        String actualString = new String(actualByte);
+        return actualString;
+    }
 }
