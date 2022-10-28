@@ -8,7 +8,7 @@ import java.time.Duration;
 
 import static com.example.helpers.GenericHelpers.driver;
 
-public class geoLocation {
+public class GeoLocation {
     @And("^user accepts the alert pop up$")
     public void userAcceptAlertPopUp() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(3000));

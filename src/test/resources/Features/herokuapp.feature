@@ -13,7 +13,6 @@ Feature: Heroku Testing
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink Add/Remove Elements
     And user clicks on Add  button
-    And user can view Delete
     And user clicks on Delete button
     Then user can view Add Element
     Examples:
@@ -37,12 +36,13 @@ Feature: Heroku Testing
     Then user can view <Message>
     Examples:
       | Page Type | User Name | Password     |                  Message                                    |
-      |  Heroku |   name      | pass_word    |      Congratulations! You must have the proper credentials.    |
+      |  Heroku |   name      | password1    |      Congratulations! You must have the proper credentials.    |
 
   Scenario Outline: Check the functionality of Dropdown
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink Dropdown
     And user selects option Option 2 in  Dropdown
+    Then user can view Option 2 selected
     Examples:
       | Page Type  |
       |   Heroku  |
@@ -71,7 +71,7 @@ Feature: Heroku Testing
   Scenario Outline: Check the visibility of images
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink Broken Images
-    Then user can view image links on the page
+    Then user can view images
     Examples:
       | Page Type |
       |  Heroku   |
@@ -103,7 +103,7 @@ Feature: Heroku Testing
         When user clicks on the hyperlink Entry Ad
         And user can view add
         And user clicks on element close
-        Then user can view page
+        Then user can view Entry add
         Examples:
           | Page Type |
           |  Heroku |
@@ -139,3 +139,50 @@ Feature: Heroku Testing
         Examples:
           | Page Type |
          |   Heroku     |
+
+     Scenario Outline: Check the functionality of pop up
+      Given user navigates to <Page Type> page
+      When user clicks on the hyperlink Exit Intent
+      And user moves the pointer outside webpage
+      Then user can view popup add
+      Examples:
+       | Page Type |
+       | Heroku    |
+
+
+  Scenario Outline: Check the functionality of file uploading
+    Given user navigates to <Page Type> page
+    When user clicks on the hyperlink File Upload
+    And user selects the file to upload
+    And user clicks on Upload button
+    Examples:
+      | Page Type  |
+      | Heroku |
+
+  Scenario Outline: Check the functionality of Switching windows
+    Given user navigates to <Page Type> page
+    When user clicks on the hyperlink Multiple Windows
+    And user clicks on the hyperlink Click Here
+    Then user can view new_window
+    Examples:
+      | Page Type |
+     | Heroku     |
+
+  Scenario Outline: Check functionality of Secure file download
+    Given user navigates to <Page Type> page
+    When user clicks on the hyperlink Secure File Download
+    And user enters <User Name> and <Password> in the alerts
+    And user clicks on the hyperlink 5mb script.xml
+    Then user can view downloaded files
+    Examples:
+      | Page Type | User Name | Password |
+      |  Heroku |   name      | password1   |
+
+  Scenario Outline: Check the functionality of floating menu
+    Given user navigates to <Page Type> page
+    When user clicks on the hyperlink Floating Menu
+    And user scrolls down at bottom
+    Then user can view bottom of the page
+    Examples:
+      | Page Type |
+      | Heroku    |
