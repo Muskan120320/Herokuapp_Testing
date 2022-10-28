@@ -3,7 +3,7 @@ Feature: Heroku Testing
   Scenario Outline: Check the functionality of A/B Testing
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink A/B Testing
-    Then user can view page
+    Then user can view A/b testing page
     Examples:
       | Page Type  |
       | Heroku |
@@ -84,6 +84,7 @@ Feature: Heroku Testing
       Examples:
         | Page Type | E-mail |     Message                |
         |  Heroku | Hero   |  Internal Server Error     |
+
 
      Scenario Outline: Check user can download files
        Given user navigates to <Page Type> page
