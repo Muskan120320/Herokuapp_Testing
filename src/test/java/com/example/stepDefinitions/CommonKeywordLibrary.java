@@ -7,8 +7,12 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
+import java.time.Duration;
 
 import static com.example.helpers.GenericHelpers.driver;
 import static com.example.helpers.GenericHelpers.getLocatorFromDictionary;
@@ -36,12 +40,13 @@ public class CommonKeywordLibrary {
         }
 
     @When("^user enters (.*) and (.*) in the alerts$")
-    public void enterValuesInAlert(String username, String password) {
+    public void enterValuesInAlert(String username, String password, String link) {
         String[] name = getLocatorFromDictionary(username);
         String[] pass = getLocatorFromDictionary(password);
+        String[] locator=getLocatorFromDictionary(link);
         String decodeName = GenericHelpers.decodeTheEncryptedString(name[0]);
         String decodePassword = GenericHelpers.decodeTheEncryptedString(pass[0]);
-        String URL = "https://" + decodeName + ":" + decodePassword + "@" + "the-internet.herokuapp.com/download_secure";
+        String URL = "https://" + decodeName + ":" + decodePassword + "@" + "the-internet.herokuapp.com/"+locator+"";
         driver.get(URL);
     }
 
@@ -50,5 +55,13 @@ public class CommonKeywordLibrary {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
+
+    @And("^user moves mouse on (.*)$")
+    public void MouseHover(String cssSelector) throws InterruptedException {
+        WebElement element = driver.findElement(By.cssSelector("#" + cssSelector));
+        Actions action= new Actions(driver);
+        action.moveToElement(element).perform();
+    }
+
 }
 

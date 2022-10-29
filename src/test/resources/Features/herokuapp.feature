@@ -127,8 +127,8 @@ Feature: Heroku Testing
          And user clicks on Log_in button
          Then user can view <Message>
          Examples:
-         | Page Type   | User Name | Password            | Message  |
-         |  Heroku   | tomsmith  | SuperSecretPassword!  |Secure Area|
+         | Page Type   | User Name   | Password              |  Message   |
+         |  Heroku     | tomsmith    | SuperSecretPassword!  | Secure Area |
 
 
       Scenario Outline: Check user can display notification message
@@ -164,10 +164,10 @@ Feature: Heroku Testing
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink Multiple Windows
     And user clicks on the hyperlink Click Here
-    Then user can view newWindow
+    Then user can view <NewWindow>
     Examples:
-      | Page Type |
-     | Heroku     |
+      | Page Type | NewWindow |
+      | Heroku    |  newWindow         |
 
   Scenario Outline: Check functionality of Secure file download
     Given user navigates to <Page Type> page
@@ -187,3 +187,12 @@ Feature: Heroku Testing
     Examples:
       | Page Type |
       | Heroku    |
+
+  Scenario Outline: Check the functionality of hovers
+    Given user navigates to <Page Type> page
+    When user clicks on the hyperlink Hovers
+    And user moves mouse on <Image>
+    Then user can view text
+    Examples:
+      | Page Type | Image        |
+      | Heroku    | element      |
