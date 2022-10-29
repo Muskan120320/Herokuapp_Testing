@@ -153,8 +153,9 @@ Feature: Heroku Testing
   Scenario Outline: Check the functionality of file uploading
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink File Upload
+    And user clicks on element choose
     And user selects the file to upload
-    And user clicks on Upload button
+    And user clicks on Upload1 button
     Examples:
       | Page Type  |
       | Heroku |
@@ -163,7 +164,7 @@ Feature: Heroku Testing
     Given user navigates to <Page Type> page
     When user clicks on the hyperlink Multiple Windows
     And user clicks on the hyperlink Click Here
-    Then user can view new_window
+    Then user can view newWindow
     Examples:
       | Page Type |
      | Heroku     |

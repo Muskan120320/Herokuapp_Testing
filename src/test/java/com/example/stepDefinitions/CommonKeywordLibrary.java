@@ -25,7 +25,7 @@ public class CommonKeywordLibrary {
     @And("^user selects the file to upload$")
     public void uploadFile(WebElement upload) {
         driver.findElement(By.cssSelector("#" + upload ));
-        upload.sendKeys("C:\\Users\\p\\Desktop\\upload\\image\\images.jfif");
+//        upload.sendKeys("C:\\Users\\p\\Desktop\\upload\\image\\images.jfif");
         driver.findElement(By.id("")).click();
     }
 
